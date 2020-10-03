@@ -1,0 +1,99 @@
+# 选择你的LaTeX编译引擎:
+    # - pdflatex
+    # - xelatex
+    # - lualatex
+engine: pdflatex
+
+# 填写你的文件名
+filename: example
+
+# 网络层数
+layers: 8
+
+# 不同层之间的间隔
+    # - default(127)
+    # - 自定义的数值(eg. 20, 55)
+layerSpace: 120
+
+# 建议width，height不要超过50
+# layers中设置了几层，后面就写几层，例如我这里是5层，所以我需要写1,2,3,4,5
+
+# 第一层
+1:
+    # 特征图数量
+    feature maps: 3
+    # 绘制图片的宽度
+    width: 32
+    # 绘制图片的长度
+    height: 32
+    # 是否绘制巻积核（巻积核+放缩线），注意：如果你下一层的feature maps为1，那么
+    # 你将exist kernel设为True是没有作用的，它只会画出一个巻积核
+    exist kernel: True
+    # 按照latex的语法填写 ～表示空格 \times表示乘号
+    maps information: Input~3 @ 32\times 32
+    layer information: Convolution~5\times 5~kernel
+
+# 第二层
+2:
+    feature maps: 32
+    width: 18
+    height: 18
+    exist kernel: True
+    maps information: Feature~maps~32 @ 18\times 18
+    layer information: Convolution~2\times 2~kernel
+
+# 第三层
+3:
+    feature maps: 32
+    width: 10
+    height: 10
+    exist kernel: True
+    maps information: Feature~maps~32 @ 10\times 10
+    layer information: Convolution~5\times 5~kernel
+
+# 第三层
+4:
+    feature maps: 48
+    width: 6
+    height: 6
+    exist kernel: True
+    maps information: Feature~maps~48 @ 6\times 6
+    layer information: Maxpooling~2\times 2~kernel
+
+# 第四层
+5:
+    feature maps: 48
+    width: 4
+    height: 4
+    exist kernel: False
+    maps information: Feature~maps~48 @ 4\times 4
+    layer information: Flatten
+
+# 第四层
+6:
+    # feature maps为1,意味着只有1张特征图，这时候用height表示有多少个unit，
+    # width代表可视化unit的边长
+    feature maps: 1
+    width: 1
+    height: 768
+    exist kernel: False
+    maps information: Hidden~units~768
+    layer information: Fully connected
+
+# 第五层
+7:
+    feature maps: 1
+    width: 1
+    height: 500
+    exist kernel: False
+    maps information: Hidden~units~500
+    layer information: Fully connected
+
+# 第五层
+8:
+    feature maps: 1
+    width: 1
+    height: 2
+    exist kernel: False
+    maps information: Outputs~2
+    layer information: " "
