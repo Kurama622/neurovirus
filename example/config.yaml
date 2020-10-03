@@ -23,9 +23,9 @@ layerSpace: 120
     # 特征图数量
     feature maps: 3
     # 绘制图片的宽度
-    width: 32
+    width: 42
     # 绘制图片的长度
-    height: 32
+    height: 42
     # 是否绘制巻积核（巻积核+放缩线），注意：如果你下一层的feature maps为1，那么
     # 你将exist kernel设为True是没有作用的，它只会画出一个巻积核
     exist kernel: True
@@ -36,8 +36,8 @@ layerSpace: 120
 # 第二层
 2:
     feature maps: 32
-    width: 18
-    height: 18
+    width: 30
+    height: 30
     exist kernel: True
     maps information: Feature~maps~32 @ 18\times 18
     layer information: Convolution~2\times 2~kernel
@@ -45,8 +45,8 @@ layerSpace: 120
 # 第三层
 3:
     feature maps: 32
-    width: 10
-    height: 10
+    width: 24
+    height: 24
     exist kernel: True
     maps information: Feature~maps~32 @ 10\times 10
     layer information: Convolution~5\times 5~kernel
@@ -54,8 +54,8 @@ layerSpace: 120
 # 第三层
 4:
     feature maps: 48
-    width: 6
-    height: 6
+    width: 16
+    height: 16
     exist kernel: True
     maps information: Feature~maps~48 @ 6\times 6
     layer information: Maxpooling~2\times 2~kernel
@@ -63,8 +63,8 @@ layerSpace: 120
 # 第五层
 5:
     feature maps: 48
-    width: 4
-    height: 4
+    width: 12
+    height: 12
     exist kernel: False
     maps information: Feature~maps~48 @ 4\times 4
     layer information: Flatten

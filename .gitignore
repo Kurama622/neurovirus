@@ -8,3 +8,4 @@ neurovirus.tex
 __pycache__
 .vim
 init.py.bak
+config.yaml_bak
