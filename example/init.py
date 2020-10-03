@@ -57,7 +57,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                    \begin{scope}[xshift="""+str(i)+"""*\layerSpace]
                       % \settowidth{\mytextlength}{$"""+map_info+"""$}
                        \coordinate (start) at (0,0);
-                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                        \\foreach \i in {1,2,...,"""+str(maps)+"""}
                       {
                           \ifodd\i
@@ -75,7 +75,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                    \begin{scope}[xshift="""+str(i)+"""*\layerSpace]
                       % \settowidth{\mytextlength}{$"""+map_info+"""$}
                        \coordinate (start) at (0,0);
-                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                        \\foreach \i in {1,2,...,"""+str(maps)+"""}
                       {
                           \ifodd\i
@@ -94,7 +94,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                           % \settowidth{\mytextlength}{$"""+map_info+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -113,7 +113,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                           % \settowidth{\mytextlength}{$"""+map_info+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -132,7 +132,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                           % \settowidth{\mytextlength}{$"""+map_info+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -151,7 +151,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                   % \settowidth{\mytextlength}{$"""+map_info+"""$}
                    \coordinate (start) at (0,"""+str(pos)+"""mm);
-                   \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+                   \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                    \\foreach \i in {1,2,...,"""+str(maps)+"""}
                   {
                       \ifodd\i
@@ -169,7 +169,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
         return r"""
            \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                \coordinate (start) at (0,"""+str(pos)+"""mm);
-               \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(width)+"""mm] at ($(0,{"""+str(width)+"""mm/2+2em})+(start)$) {$"""+map_info+"""$};
+               \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(width)+"""mm] at ($(0,{"""+str(width)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
                \\foreach \i in {1,2,...,"""+str(height)+"""}
               {
                   \ifodd\i
