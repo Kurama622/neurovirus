@@ -78,7 +78,7 @@ layerSpace: 120
     height: 768
     exist kernel: False
     maps information: Hidden~units~768
-    layer information: Fully connected
+    layer information: Fully~connected
 
 # 第七层
 7:
@@ -87,7 +87,7 @@ layerSpace: 120
     height: 500
     exist kernel: False
     maps information: Hidden~units~500
-    layer information: Fully connected
+    layer information: Fully~connected
 
 # 第八层
 8:
