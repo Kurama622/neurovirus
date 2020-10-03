@@ -60,7 +60,7 @@ layerSpace: 120
     maps information: Feature~maps~48 @ 6\times 6
     layer information: Maxpooling~2\times 2~kernel
 
-# 第四层
+# 第五层
 5:
     feature maps: 48
     width: 4
@@ -69,7 +69,7 @@ layerSpace: 120
     maps information: Feature~maps~48 @ 4\times 4
     layer information: Flatten
 
-# 第四层
+# 第六层
 6:
     # feature maps为1,意味着只有1张特征图，这时候用height表示有多少个unit，
     # width代表可视化unit的边长
@@ -80,7 +80,7 @@ layerSpace: 120
     maps information: Hidden~units~768
     layer information: Fully connected
 
-# 第五层
+# 第七层
 7:
     feature maps: 1
     width: 1
@@ -89,7 +89,7 @@ layerSpace: 120
     maps information: Hidden~units~500
     layer information: Fully connected
 
-# 第五层
+# 第八层
 8:
     feature maps: 1
     width: 1
