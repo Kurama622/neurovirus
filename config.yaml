@@ -75,7 +75,7 @@ layerSpace: default
     # width代表可视化unit的边长
     feature maps: 1
     width: 1
-    height: 32
+    height: 40
     exist kernel: False
     maps information: Hidden~units\\ 768
     layer information: Fully\\ connected
@@ -84,7 +84,7 @@ layerSpace: default
 7:
     feature maps: 1
     width: 1
-    height: 40
+    height: 32
     exist kernel: False
     maps information: Hidden~units\\ 500
     layer information: Fully\\ connected

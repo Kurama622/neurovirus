@@ -123,7 +123,7 @@
            \begin{scope}[xshift=5*\layerSpace*(1-5/40)]
                \coordinate (start) at (0,17.0mm);
                \node [subfig,minimum width=8mm, minimum height=8mm] at ($(0,{8mm/2+4em})+(start)$) {$Hidden~units$\\ $ 768$};
-               \foreach \i in {1,2,...,32}
+               \foreach \i in {1,2,...,40}
               {
                   \ifodd\i
                       \node [draw,fill=VegetaRed,subfig,minimum width=8mm, minimum height=8mm] at ($({8mm/4*(\i-1)},{-8mm/3*(\i-1)})+ (start)$) {};
@@ -136,7 +136,7 @@
            \begin{scope}[xshift=6*\layerSpace*(1-6/40)]
                \coordinate (start) at (0,17.0mm);
                \node [subfig,minimum width=8mm, minimum height=8mm] at ($(0,{8mm/2+4em})+(start)$) {$Hidden~units$\\ $ 500$};
-               \foreach \i in {1,2,...,40}
+               \foreach \i in {1,2,...,32}
               {
                   \ifodd\i
                       \node [draw,fill=VegetaRed,subfig,minimum width=8mm, minimum height=8mm] at ($({8mm/4*(\i-1)},{-8mm/3*(\i-1)})+ (start)$) {};
@@ -169,7 +169,7 @@
 
            \node [subfig] at ($({54.0mm+4*\layerSpace*(1-4/40)},{-106.66666666666666mm})$) {$Flatten$\\ $ $};
 
-           \node [subfig] at ($({62.0mm+5*\layerSpace*(1-5/40)},{-106.66666666666666mm})$) {$Fully$\\ $ connected$};
+           \node [subfig] at ($({78.0mm+5*\layerSpace*(1-5/40)},{-106.66666666666666mm})$) {$Fully$\\ $ connected$};
 
            \node [subfig] at ($({78.0mm+6*\layerSpace*(1-6/40)},{-106.66666666666666mm})$) {$Fully$\\ $ connected$};
 
