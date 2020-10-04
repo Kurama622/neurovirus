@@ -11,9 +11,9 @@ filename: example
 layers: 8
 
 # 不同层之间的间隔
-    # - default(127)
+    # - default(96)
     # - 自定义的数值(eg. 20, 55)
-layerSpace: 120
+layerSpace: default
 
 # 建议width，height不要超过50
 # layers中设置了几层，后面就写几层，例如我这里是5层，所以我需要写1,2,3,4,5
@@ -30,43 +30,43 @@ layerSpace: 120
     # 你将exist kernel设为True是没有作用的，它只会画出一个巻积核
     exist kernel: True
     # 按照latex的语法填写 ～表示空格 \times表示乘号
-    maps information: Input~3 @ 32\times 32
-    layer information: Convolution~5\times 5~kernel
+    maps information: Input\\ 3 @ 32\times 32
+    layer information: Convolution\\ 5\times 5~kernel
 
 # 第二层
 2:
-    feature maps: 32
+    feature maps: 8
     width: 30
     height: 30
     exist kernel: True
-    maps information: Feature~maps~32 @ 18\times 18
-    layer information: Convolution~2\times 2~kernel
+    maps information: Feature~maps\\ 32 @ 18\times 18
+    layer information: Convolution\\ 2\times 2~kernel
 
 # 第三层
 3:
-    feature maps: 32
+    feature maps: 16
     width: 24
     height: 24
     exist kernel: True
-    maps information: Feature~maps~32 @ 10\times 10
-    layer information: Convolution~5\times 5~kernel
+    maps information: Feature~maps\\ 32 @ 10\times 10
+    layer information: Convolution\\ 5\times 5~kernel
 
 # 第三层
 4:
-    feature maps: 48
+    feature maps: 24
     width: 16
     height: 16
     exist kernel: True
-    maps information: Feature~maps~48 @ 6\times 6
-    layer information: Maxpooling~2\times 2~kernel
+    maps information: Feature~maps\\ 48 @ 6\times 6
+    layer information: Maxpooling\\ 2\times 2~kernel
 
 # 第五层
 5:
-    feature maps: 48
+    feature maps: 28
     width: 12
     height: 12
     exist kernel: False
-    maps information: Feature~maps~48 @ 4\times 4
+    maps information: Feature~maps\\ 48 @ 4\times 4
     layer information: Flatten
 
 # 第六层
@@ -75,19 +75,19 @@ layerSpace: 120
     # width代表可视化unit的边长
     feature maps: 1
     width: 1
-    height: 768
+    height: 32
     exist kernel: False
-    maps information: Hidden~units~768
-    layer information: Fully~connected
+    maps information: Hidden~units\\ 768
+    layer information: Fully\\ connected
 
 # 第七层
 7:
     feature maps: 1
     width: 1
-    height: 500
+    height: 40
     exist kernel: False
-    maps information: Hidden~units~500
-    layer information: Fully~connected
+    maps information: Hidden~units\\ 500
+    layer information: Fully\\ connected
 
 # 第八层
 8:

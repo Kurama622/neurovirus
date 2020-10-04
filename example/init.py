@@ -48,7 +48,7 @@ def to_document():
     \begin{tikzpicture}
       % \newlength{\mytextlength}
 """
-def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, layer_info):
+def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info_split_1,map_info_split_2):
     if maps != 1:
         if i == 0:
             # 是否画巻积核
@@ -57,7 +57,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                    \begin{scope}[xshift="""+str(i)+"""*\layerSpace]
                       % \settowidth{\mytextlength}{$"""+map_info+"""$}
                        \coordinate (start) at (0,0);
-                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                        \\foreach \i in {1,2,...,"""+str(maps)+"""}
                       {
                           \ifodd\i
@@ -75,7 +75,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                    \begin{scope}[xshift="""+str(i)+"""*\layerSpace]
                       % \settowidth{\mytextlength}{$"""+map_info+"""$}
                        \coordinate (start) at (0,0);
-                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                       \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                        \\foreach \i in {1,2,...,"""+str(maps)+"""}
                       {
                           \ifodd\i
@@ -94,7 +94,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                           % \settowidth{\mytextlength}{$"""+map_info+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -111,9 +111,9 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                 else:
                     return r"""
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
-                          % \settowidth{\mytextlength}{$"""+map_info+"""$}
+                          % \settowidth{\mytextlength}{$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -132,7 +132,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                        \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                           % \settowidth{\mytextlength}{$"""+map_info+"""$}
                            \coordinate (start) at (0,"""+str(pos)+"""mm);
-                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                           \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                            \\foreach \i in {1,2,...,"""+str(maps)+"""}
                           {
                               \ifodd\i
@@ -151,7 +151,7 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
                \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                   % \settowidth{\mytextlength}{$"""+map_info+"""$}
                    \coordinate (start) at (0,"""+str(pos)+"""mm);
-                   \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+                   \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(height)+"""mm] at ($(0,{"""+str(height)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                    \\foreach \i in {1,2,...,"""+str(maps)+"""}
                   {
                       \ifodd\i
@@ -165,11 +165,10 @@ def to_draw(i, maps, width, height, kernel, kernel_pre, height_pre, map_info, la
 
     else:
         pos = (height_pre-width)/2.
-        height = height - 8
         return r"""
            \begin{scope}[xshift="""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)]
                \coordinate (start) at (0,"""+str(pos)+"""mm);
-               \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(width)+"""mm] at ($(0,{"""+str(width)+"""mm/2+3em})+(start)$) {$"""+map_info+"""$};
+               \\node [subfig,minimum width="""+str(width)+"""mm, minimum height="""+str(width)+"""mm] at ($(0,{"""+str(width)+"""mm/2+4em})+(start)$) {$"""+map_info_split_1+"""$\\\\ $"""+map_info_split_2+"""$};
                \\foreach \i in {1,2,...,"""+str(height)+"""}
               {
                   \ifodd\i
@@ -190,9 +189,9 @@ def to_lines(i,all_kernel):
     else:
         return r"""  """
 
-def to_layers_info(i,layer_info_width,layer_info_heigth,layer_info):
+def to_layers_info(i,layer_info_width,layer_info_heigth,layer_info_split_1,layer_info_split_2):
     return r"""
-           \node [subfig] at ($({"""+str(layer_info_width)+"""mm+"""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)},{"""+str(layer_info_heigth)+"""mm})$) {$"""+str(layer_info)+"""$};
+           \node [subfig] at ($({"""+str(layer_info_width)+"""mm+"""+str(i)+"""*\layerSpace*(1-"""+str(i)+"""/40)},{"""+str(layer_info_heigth)+"""mm})$) {$"""+layer_info_split_1+"""$\\\\ $"""+layer_info_split_2+"""$};
 """
 
 def to_end():
@@ -215,7 +214,7 @@ if __name__ == '__main__':
     max_map_width = config[1]['width']
     layerSpace = config['layerSpace']
     if layerSpace == 'default':
-        layerSpace = 127
+        layerSpace = 90
     arch = []
     arch.append(to_head(layerSpace))
     arch.append(to_colors())
@@ -224,6 +223,8 @@ if __name__ == '__main__':
     all_height = [0]
     all_map = [0]
     all_layer_info = []
+    all_layer_info_split_1 = []
+    all_layer_info_split_2 = []
     all_kernel = [False]
     for i in range(layers):
         engine = config['engine']
@@ -253,8 +254,8 @@ if __name__ == '__main__':
         else:
             all_map.append(maps)
             j = 0
-            if height>48:
-                height = 24
+            if height>72:
+                height = 72
             # if width>63:
                 # width = width / 8
                 # height = height / 8
@@ -265,9 +266,25 @@ if __name__ == '__main__':
         all_width.append(width)
         all_height.append(height)
         map_info = config[i+1]['maps information']
+        map_info_split_all = map_info.split(r"\\")
+        if len(map_info_split_all) != 1:
+            map_info_split_1 = map_info_split_all[0]
+            map_info_split_2 = map_info_split_all[1]
+        else:
+            map_info_split_1 = map_info_split_all[0]
+            map_info_split_2 = " "
         layer_info = config[i+1]['layer information']
+        layer_info_split_all = layer_info.split(r"\\")
+        if len(layer_info_split_all) != 1:
+            layer_info_split_1 = layer_info_split_all[0]
+            layer_info_split_2 = layer_info_split_all[1]
+        else:
+            layer_info_split_1 = layer_info_split_all[0]
+            layer_info_split_2 = " "
         all_layer_info.append(layer_info)
-        arch.append(to_draw(i, maps, width, height, kernel, all_kernel[-1], all_height[-1-i], map_info, layer_info))
+        all_layer_info_split_1.append(layer_info_split_1)
+        all_layer_info_split_2.append(layer_info_split_2)
+        arch.append(to_draw(i, maps, width, height, kernel, all_kernel[-1], all_height[-1-i], map_info_split_1,map_info_split_2))
         print(kernel, all_kernel[-1])
         all_kernel.append(kernel)
         if j > 0:
@@ -277,7 +294,11 @@ if __name__ == '__main__':
     all_sum_height = []
     all_sum_width = []
     for i in range(1,N):
-        tmp = all_height[i]/3*(all_map[i]+1)
+        if all_map[i] != 1:
+            tmp = all_height[i]/3*(all_map[i]+1)
+        else:
+            if all_height[i] > 32:
+                tmp = all_width[i]/3*(all_height[i])
         all_sum_height.append(tmp)
         if all_map[i] != 1:
             tmp_width = all_width[i]/4*(all_map[i]-1)
@@ -311,7 +332,7 @@ if __name__ == '__main__':
     # layer_info_width = max_width/4*(max_map_num-1)
     layer_info_width = all_sum_width
     for i in range(layers):
-        arch.append(to_layers_info(i,layer_info_width[i],layer_info_heigth,all_layer_info[i]))
+        arch.append(to_layers_info(i,layer_info_width[i],layer_info_heigth,all_layer_info_split_1[i], all_layer_info_split_2[i]))
 
     arch.append(to_end())
     to_generate(arch, filename)

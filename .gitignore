@@ -1,8 +1,6 @@
-example.aux
-example.log
 main.go
-neurovirus.aux
-neurovirus.log
+*.aux
+*.log
 neurovirus.pdf
 neurovirus.tex
 __pycache__
